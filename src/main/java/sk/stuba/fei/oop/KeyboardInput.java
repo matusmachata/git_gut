@@ -26,7 +26,7 @@ public class KeyboardInput {
     }
 
     public static char readChar(int numberOfTries, String failureText) {
-        return repeatInput(numberOfTries, failureText, c -&gt; c == (char) 0, KeyboardInput::readChar);
+        return repeatInput(numberOfTries, failureText, c -> c == (char) 0, KeyboardInput::readChar);
     }
 
     public static char readChar(int numberOfTries) {
@@ -94,7 +94,7 @@ public class KeyboardInput {
     }
 
     public static int readInt(int numberOfTries, String failureText) {
-        return repeatInput(numberOfTries, failureText, i -&gt; i == Integer.MIN_VALUE, KeyboardInput::readInt);
+        return repeatInput(numberOfTries, failureText, i -> i == Integer.MIN_VALUE, KeyboardInput::readInt);
     }
 
     public static int readInt(int numberOfTries) {
@@ -128,7 +128,7 @@ public class KeyboardInput {
     }
 
     public static double readDouble(int numberOfTries, String failureText) {
-        return repeatInput(numberOfTries,failureText, d -&gt; d == Double.MIN_VALUE, KeyboardInput::readDouble);
+        return repeatInput(numberOfTries,failureText, d -> d == Double.MIN_VALUE, KeyboardInput::readDouble);
     }
 
     public static double readDouble(int numberOfTries) {
@@ -161,10 +161,10 @@ public class KeyboardInput {
 
     public static boolean readBoolean() throws IllegalArgumentException {
         String input = readString();
-        if (input.isEmpty() || Arrays.stream(FALSE_INPUTS).anyMatch(s -&gt; s.equalsIgnoreCase(input))) {
+        if (input.isEmpty() || Arrays.stream(FALSE_INPUTS).anyMatch(s -> s.equalsIgnoreCase(input))) {
             return false;
         }
-        if (Arrays.stream(TRUE_INPUTS).anyMatch(s -&gt; s.equalsIgnoreCase(input))) {
+        if (Arrays.stream(TRUE_INPUTS).anyMatch(s -> s.equalsIgnoreCase(input))) {
             return true;
         } else {
             throw new IllegalArgumentException("Invalid boolean input! Input " + input + " cannot be parsed into boolean value.");
@@ -180,9 +180,9 @@ public class KeyboardInput {
         return s.isEmpty() ? (char) 0 : s.charAt(0);
     }
 
-    private static &lt;T&gt; T repeatInput(int repetition, String failureMessage, Predicate&lt;T&gt; predicate, Supplier&lt;T&gt; supplier) {
+    private static <T> T repeatInput(int repetition, String failureMessage, Predicate<T> predicate, Supplier<T> supplier) {
         T o = supplier.get();
-        while (predicate.test(o) &amp;&amp; repetition != 0) {
+        while (predicate.test(o) && repetition != 0) {
             System.out.println(failureMessage != null ? failureMessage : "");
             o = supplier.get();
             repetition--;
