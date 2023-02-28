@@ -1,5 +1,9 @@
 public class main {
-//asdfa
-    //yeet
-    //asdasd
+
+
+
+
+    static void method(){
+
+    }
 }
