@@ -5,14 +5,15 @@ public class main {
 
     public static void main(String[] args) {
         int den;
-        int mesiac;
+        int mesiac = 1;
         int znamenie;
-        den = KeyboardInput.readInt("enter birth day",2);
+        while (mesiac >= 1 && mesiac <= 12){
+            den = KeyboardInput.readInt("enter birth day", 2);
         mesiac = KeyboardInput.readInt("enter birth month");
         System.out.println(den + mesiac);
-        znamenie = method(mesiac,den);
+        znamenie = method(mesiac, den);
 
-        switch (znamenie){
+        switch (znamenie) {
             case 1:
                 System.out.println("your sign is : Aries");
                 break;
@@ -51,6 +52,7 @@ public class main {
                 break;
 
         }
+        }
     }
 
 
@@ -64,62 +66,65 @@ public class main {
                 if (den <= 1 && den <= 19) znamnie_cislo = 10;
                 else znamnie_cislo = 11;
                 return znamnie_cislo;
-            break;
+            //break;
             case 2:
                 if (den <= 1 && den <= 19) znamnie_cislo = 11;
                 else znamnie_cislo = 12;
                 return znamnie_cislo;
-            break;
+            //break;
             case 3:
                 if (den <= 1 && den <= 19) znamnie_cislo = 12;
                 else znamnie_cislo = 1;
                 return znamnie_cislo;
-            break;
+            //break;
             case 4:
                 if (den <= 1 && den <= 19) znamnie_cislo = 1;
                 else znamnie_cislo = 2;
                 return znamnie_cislo;
-            break;
+            //break;
             case 5:
                 if (den <= 1 && den <= 19) znamnie_cislo = 2;
                 else znamnie_cislo = 3;
                 return znamnie_cislo;
-            break;
+            //break;
             case 6:
                 if (den <= 1 && den <= 19) znamnie_cislo = 3;
                 else znamnie_cislo = 4;
                 return znamnie_cislo;
-            break;
+            //break;
             case 7:
                 if (den <= 1 && den <= 19) znamnie_cislo = 4;
                 else znamnie_cislo = 5;
                 return znamnie_cislo;
-            break;
+            //break;
             case 8:
                 if (den <= 1 && den <= 19) znamnie_cislo = 5;
                 else znamnie_cislo = 6;
                 return znamnie_cislo;
-            break;
+            //break;
             case 9:
                 if (den <= 1 && den <= 19) znamnie_cislo = 6;
                 else znamnie_cislo = 7;
                 return znamnie_cislo;
-            break;
+            //break;
             case 10:
                 if (den <= 1 && den <= 19) znamnie_cislo = 7;
                 else znamnie_cislo = 8;
                 return znamnie_cislo;
-            break;
+            //break;
             case 11:
                 if (den <= 1 && den <= 19) znamnie_cislo = 8;
                 else znamnie_cislo = 9;
                 return znamnie_cislo;
-            break;
+            //break;
             case 12:
                 if (den <= 1 && den <= 19) znamnie_cislo = 9;
                 else znamnie_cislo = 10;
                 return znamnie_cislo;
-            break;
+            //break;
+            default:
+                return znamnie_cislo = 1;
         }
+
     }
 }
